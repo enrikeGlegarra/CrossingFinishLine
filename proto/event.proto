@@ -3,6 +3,7 @@ syntax = "proto3";
 package event;
 
 service EventService {
+  rpc FindOneEvent (FindOneEventRequest) returns (FindOneEventResponse) {}
   rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse) {}
 }
 
@@ -37,6 +38,7 @@ message FindOneEventData {
   string eventDate = 8;
   string createdDate = 9;
   string updatedDate = 10;
+  string deletedDate = 11;
 }
 
 message FindOneEventRequest {
