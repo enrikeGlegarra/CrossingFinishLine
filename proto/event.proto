@@ -18,11 +18,23 @@ message CreateEventRequest {
   string createdDate = 9;
   string updatedDate = 10;
   string deletedDate = 11;
-  double price = 12;
 }
 
 message CreateEventResponse {
   int32 status = 1;
   repeated string error = 2;
   int32 id = 3;
+}
+
+message FindOneEvent {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string location = 4;
+  string province = 5;
+  string country = 6;
+  string sport = 7;
+  string eventDate = 8;
+  string createdDate = 9;
+  string updatedDate = 10;
 }
