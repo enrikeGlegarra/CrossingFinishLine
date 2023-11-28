@@ -4,7 +4,7 @@ package modality;
 
 service ModalityService{
   rpc GetModality(GetModalityRequest) returns (GetModalityResponse) {}
-  rpc ListModalities(ListModalitiesRequest) returns (ListModalitiesResponse) {}
+  rpc ListModalities(ListModalitiesRequest) returns (ListModalityPaginatedResponse) {}
   rpc CreateModality(CreateModalityRequest) returns (CreateModalityResponse) {}
  }
 
@@ -26,7 +26,7 @@ message GetModalityRequest {
 }
 
 message GetModalityResponse {
-  ModalityData modality = 1;
+  repeated ModalityData modalit = 1;
   int32 status = 2;
   repeated string error = 3;
 }
@@ -42,12 +42,6 @@ message ListModalitiesRequest {
   int32 per_page = 2;
 }
 
-message ListModalitiesResponse {
-  repeated ModalityData modalities = 1;
-  int32 status = 2;
-  repeated string error = 3;
-}
-
 message CreateModalityRequest {
   int32 id = 1;
   string name = 2;
@@ -61,3 +55,10 @@ message CreateModalityRequest {
   string kilometers = 10;
 }
 
+message ListModalityPaginatedResponse {
+  int32 page = 1;
+  int32 perPAge = 2;
+  int32 total = 3;
+  int32 totalPages = 4;
+  repeated ModalityData data = 5;
+}
