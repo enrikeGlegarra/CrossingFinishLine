@@ -62,3 +62,9 @@ message ListModalityPaginatedResponse {
   int32 totalPages = 4;
   repeated ModalityData data = 5;
 }
+
+message ListModalityResponseError {
+  int32 status = 2;
+  repeated string error = 3;
+}
+
