@@ -1,0 +1,19 @@
+syntax = "proto3";
+package registration;
+
+service RegistrationService {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message RegisterRequest {
+  int32 userId = 1;
+  int32 modalityId = 2;
+  bool isCompleted = 3;
+}
+message RegisterResponse {
+  int32 registrationId = 1;
+  int32 userId = 2;
+  int32 modalityId = 3;
+  bool isCompleted = 4;
+  string createDate = 5;
+}
